@@ -1,0 +1,15 @@
+/* pages/log/log.ttss */
+.title{
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 20px;
+}
+
+.message{
+    margin-top: 40px;
+    font-size: 20px;
+    font-weight: 540;
+    text-align: center;
+}

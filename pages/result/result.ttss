@@ -1,0 +1,20 @@
+.page-section-spacing{
+  margin-top: 30rpx;
+}
+
+.scroll-view-item{
+  height: 100%;
+}
+
+.demo-text-1{
+  background-color: gray;
+  height: 10%;
+}
+.demo-text-2{
+  background-color:snow;
+  height: 10%;
+}
+.demo-text-3{
+  background-color: orange;
+  height: 10%;
+}

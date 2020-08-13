@@ -1,0 +1,19 @@
+<view class="page-section-spacing">
+  <scroll-view scroll-y="true" style="height: 800px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="demo1" class="scroll-view-item demo-text-1"></view>
+    <view id="demo2" class="scroll-view-item demo-text-2"></view>
+    <view id="demo3" class="scroll-view-item demo-text-3"></view>
+    <view id="demo4" class="scroll-view-item demo-text-1"></view>
+    <view id="demo5" class="scroll-view-item demo-text-2"></view>
+    <view id="demo6" class="scroll-view-item demo-text-3"></view>
+    <view id="demo7" class="scroll-view-item demo-text-1"></view>
+    <view id="demo8" class="scroll-view-item demo-text-2"></view>
+    <view id="demo9" class="scroll-view-item demo-text-3"></view>
+    <view id="demo10" class="scroll-view-item demo-text-1"></view>
+    <view id="demo11" class="scroll-view-item demo-text-2"></view>
+    <view id="demo12" class="scroll-view-item demo-text-3"></view>
+    <view id="demo13" class="scroll-view-item demo-text-1"></view>
+    <view id="demo14" class="scroll-view-item demo-text-2"></view>
+    <view id="demo15" class="scroll-view-item demo-text-3"></view>
+  </scroll-view>
+</view>

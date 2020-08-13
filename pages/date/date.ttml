@@ -1,0 +1,12 @@
+<view class="title">
+    <view >NativeAPI</view>
+    <button type="primary" bindtap="send1">获取当前位置</button>
+
+    <view>ThirdAPI</view>
+    <button type="primary" bindtap="send2">获取成都天气</button>
+
+    <view>SpringbootAPI</view>
+    <button type="primary" bindtap="send3">访问8080端口</button>
+
+</view>
+<view class='message'>{{message}}</view>

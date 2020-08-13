@@ -1,0 +1,45 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/account/account",
+    "pages/result/result",
+    "pages/date/date"
+    
+  ],
+
+  "ext": {
+    "defaultPages": {
+      "sidebarMode": "pages/home/home",
+      "PCMode": "pages/home/home"
+    }
+  },
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Mini Program",
+    "navigationBarTextStyle":"black"
+  },
+
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#006aff",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "white",
+    "list":[
+      {
+        "pagePath": "pages/home/home",
+        "text": "主页",
+        "iconPath": "icon/home.png",
+        "selectedIconPath": "icon/home_active.png"
+      },
+      {
+        "pagePath": "pages/date/date",
+        "text": "日程",
+        "iconPath": "icon/calendar.png",
+        "selectedIconPath": "icon/calendar_active.png"
+      }
+
+    ]
+  }
+}

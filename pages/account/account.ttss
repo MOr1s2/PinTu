@@ -1,0 +1,22 @@
+/* pages/account.ttss */
+.avatar{
+    height: 100px;
+    width: 100px;
+    border: 1px solid gainsboro;
+    border-radius: 50px;
+    margin-top: 20px;
+    margin-left: 135px;
+    margin-bottom: 40px;
+}
+
+.information{
+    margin: 10px;
+}
+
+.line{
+    width: 355px;
+    height: 2rpx;
+    background: #aaa;
+    margin-left: 10px;
+    margin-right: 10px;
+}
