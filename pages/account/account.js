@@ -1,6 +1,7 @@
 // pages/account.js
 Page({
   data: {
+    id:"",
     avatar:"",
     rank:"",
     nickName:"",
@@ -18,13 +19,16 @@ Page({
     }else if(app.globalData.account.gender==2){
       mygender = "女"
     }else{
-      mygender = "未知"
+      mygender = "保密"
     }
-    app.globalData.account.gender=1;
     self.setData({
-      avatar:app.globalData.account.avatarUrl,
-      name:app.globalData.account.nickName,
-      gender:mygender
+      avatar:app.globalData.account.avatar,
+      name:app.globalData.account.name,
+      gender:mygender,
+      nickName:app.globalData.account.nickName,
+      phone:app.globalData.account.phone,
+      university:app.globalData.account.university,
+      rank:app.globalData.account.rank
     })
   }
   

@@ -31,6 +31,11 @@
     width: 40px;
 }
 
+.page_button_choose{
+    height: 28px;
+    width: 80px;
+}
+
 .page_button{
     height:40px;
     width:280px;

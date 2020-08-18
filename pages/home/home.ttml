@@ -4,9 +4,9 @@
     </view>
     <image class="page_image" src="/image/LvTu.png"></image>
     <view class="page_row">
-        <input class="page_input" placeholder="起点"/>
-        <button class="page_button_switch"></button>
-        <input class="page_input" placeholder="终点"/>
+        <button class="page_button_choose" bindtap="chooseLeft">{{nameLeft}}</button>
+        <button class="page_button_switch" bindtap="switchName">⋘⋙</button>
+        <button class="page_button_choose" bindtap="chooseRight">{{nameRight}}</button>
     </view>
 
     <view class="page_row">
