@@ -158,6 +158,7 @@ Page({
                             latitudeLeft: latitude,
                             longitudeLeft: longitude
                         })
+                        return self.data.nameLeft
                         console.log(`choose success:${self.data.nameLeft}`)
                     },
                     complete(res){
@@ -190,6 +191,7 @@ Page({
                             latitudeRight: latitude,
                             longitudeRight: longitude
                         })
+                        return self.data.nameRight
                         console.log(`choose success:${self.data.nameRight}`)
                     },
                     complete(res){
@@ -217,5 +219,17 @@ Page({
                 nameRight:'终点'
             })
         }
+    },
+
+    search: function(e){
+        tt.navigateTo({
+            url: "/pages/result/result",
+            success (res) {
+                console.log(`${res}`);
+            },
+            fail (res) {
+                console.log(`navigateTo 调用失败`);
+            }
+        });
     }
 })

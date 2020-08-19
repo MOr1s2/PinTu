@@ -1,42 +1,96 @@
-.page{
-    margin: 10px;
+.account{
+    margin-left: 85%;
+    width:36px;
+    height:36px;
 }
 
-.page_image{
-    width: 100px;
-    height: 100px;
-    margin-left: 130px;
+.image{
+    margin-left: 35%;
+    width: 144px;
+    height: 144px;
 }
 
-.page_row{
-    margin-top: 20px;
+.background{
+    margin: 24px 36px 0px 36px;
+    background-color: #fdfdfd;
+    height: 270px;
+    border: 1px solid #f5f6f7;
+    border-radius: 27px;
+}
+
+.button{
+    background: #fdfdfd;
+    height: 108px;
+    border: 1px solid #f5f6f7;
+    border-radius: 27px;
+    text-align: left;
+    box-shadow: 0px 2px 6px 0px #dddddd;
+}
+
+.input{
+    height: 50%;
+    margin-left: 5%;
+}
+
+.line{
+    margin-left: 5%;
+    width: 90%;
+    height: 1px;
+    background: #dddddd;
+}
+
+.row{
     display: flex;
-    margin-bottom: 20px;
+    margin: 12px 0px;
 }
 
-.page_input{
-    border-color: #c0c0c0;
-    border-style: solid;
-    border-width: 0px 0px 1px 0px;
-    text-align: center;
-    width: 100px;
-    height: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 20px;
+.search{
+    margin-top: 12px;
+    width: 180px;
+    border-radius: 24px;
+    background-color: rgb(0,106,255);
+    border: 1px solid rgb(0,106,255);
+    box-shadow: 0px 2px 6px 0px #a3c3ff;
+}
+.search:after {
+    border-radius: 48px; /* 需要设置为按钮圆角的两倍 */
+    display: none;
 }
 
-.page_button_switch{
-    height: 28px;
-    width: 40px;
+.switch{
+    margin-top: 12px;
+    width: 84px;
+    border-radius: 24px;
+    background-color: rgb(0,106,255);
+    border: 1px solid rgb(0,106,255);
+    box-shadow: 0px 2px 6px 0px #a3c3ff;
+}
+.switch:after {
+    border-radius: 48px; /* 需要设置为按钮圆角的两倍 */
+    display: none;
 }
 
-.page_button_choose{
-    height: 28px;
-    width: 80px;
+.date{
+    margin-left: 18px;
+    width: 144px;
+    border: 0px solid #dddddd;
+    background-color: #fdfdfd;
+    border-radius: 0px;
+    border-bottom-width: 1px;
+}
+.date:after{
+    display: none;
 }
 
-.page_button{
-    height:40px;
-    width:280px;
+.time{
+    margin-left: 48px;
+    width: 66px;
+    border: 0px solid #dddddd;
+    background-color: #fdfdfd;
+    border-radius: 0px;
+    border-bottom-width: 1px;
+}
+
+.time:after{
+    display: none;
 }

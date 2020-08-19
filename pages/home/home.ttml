@@ -1,34 +1,30 @@
-<view class="page">
-    <view>
-        <image src="/icon/account.png"/ style="width:25px;height:25px;margin-left:300px" bindtap="login">
-    </view>
-    <image class="page_image" src="/image/LvTu.png"></image>
-    <view class="page_row">
-        <button class="page_button_choose" bindtap="chooseLeft">{{nameLeft}}</button>
-        <button class="page_button_switch" bindtap="switchName">⋘⋙</button>
-        <button class="page_button_choose" bindtap="chooseRight">{{nameRight}}</button>
-    </view>
+<view>
+    <image class="account" src="/icon/account.png" bindtap="login">
+</view>
 
-    <view class="page_row">
+<view>
+    <image class="image" src="/image/LvTu.png"></image>
+</view>
+
+<view class="background">
+    <view class="button">
+        <input class="input" placeholder={{nameLeft}} bindfocus="chooseLeft"/>
+        <view class="line"></view>
+        <input class="input" placeholder={{nameRight}} bindfocus="chooseRight"/> 
+    </view>
+    <view class="row">
         <picker mode="date" value="{{date}}" start="2020-01-01" end="2022-12-31"
         bindchange="bindDateChange" fields="day">
-        <view class="picker" style="margin-left:35px;font-size:20px">
-            {{date}}
-        </view>
+            <button class="date"> {{date}} </button>
         </picker>
 
         <picker mode="time" value="{{time}}" start="{{timeStart}}" end="{{timeEnd}}"
-        bindchange="bindTimeChange" style="margin-left:125px;font-size:20px">
-        <view class="picker">
-            {{time}}
-        </view>
+        bindchange="bindTimeChange">
+            <button class="time"> {{time}} </button>
         </picker>
     </view>
-
-    <navigator url="/pages/result/result">
-        <view class="page_row">
-            <button class="page_button" bindtap="slide">搜索</button>
-        </view>
-    </navigator>
-
+    <view class="row">
+        <button  class="switch" type="primary" bindtap="switchName"> ↺ </button>
+        <button  class="search" type="primary" bindtap="search"> 搜索 </button>
     </view>
+</view>
