@@ -70,13 +70,14 @@ Page({
                     }
                 });
                 tt.request({
-                    url: `http://localhost:8080/${app.globalData.account.id}`,
+                    //url: `http://192.168.1.109:8080/${app.globalData.account.id}`,
+                    url: `http://192.168.1.109:8080/user/1`,
                     method:'get',
                     success(res) {
                         if(!res){
                             console.log(`get调用结果为${res}`); 
                         }else{
-                            console.log(`get调用成功：${res}`);
+                            console.log(`get调用成功：${res.data.id}`);
                             var app = getApp();
                             app.globalData.account = res.data;
                             try {
@@ -96,7 +97,7 @@ Page({
                                 console.log(`getUserInfo 调用成功 ${res.userInfo}`);
                                 tt.request({
                                     //url: `http://localhost:8080/user?id=${}&avatar=${}&rank=${}&nickName=${}&name=${}&gender=${}&phone=${}&university=${}`,
-                                    url: `http://localhost:8080/user?id=${app.globalData.account.id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${2}`,
+                                    url: `http://192.168.1.109:8080/user?id=${app.globalData.account.id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${2}`,
                                     method:'post',
                                     success(res) {
                                         if(!res){
