@@ -1,64 +1,35 @@
-// pages/log/log.js
+const date = new Date()
+const years = []
+const months = []
+const days = []
+for (let i = date.getFullYear()-2; i <= date.getFullYear()+2; i++) {
+	years.push(i)
+}
+for (let i = 1; i <= 12; i++) {
+	months.push(i)
+}
+for (let i = 1; i <= 31; i++) {
+	days.push(i)
+}
 Page({
-  data: {
-      code:"",
-      app_access_token:"",
-      tenant_access_token:""
-  },
+	data: {
+		years: years,
+		months: months,
+		days: days,
+		value: [2,date.getMonth(),date.getDate()-1],
+	},
 
-  onLoad: function (options) {
-    self = this
-  },
+    onLoad: function (options) {
+        self = this;
+		console.log(self.data.value)
+    },
 
-  test: function(e){
-    tt.request({
-        url: 'https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal/',
-        method: "POST",
-        data: {
-            "app_id":"cli_slkdjalasdkjasd",
-            "app_secret":"dskLLdkasdjlasdKK"
-        },
-        header: {
-            'content-type': 'application/json'
-        },
-        success (res) {
-            self.setData({
-                app_access_token: res.app_access_token,
-                tenant_access_token: res.tenant_access_token
-            })
-            console.log(`app_access_token 调用成功 ${res}`);
-        },
-        fail (res) {
-            console.log(`app_access_token 调用失败`);
-        }
-    });
-    tt.login({
-        success (res) {
-            self.setData({
-                code: res.code
-            })
-            tt.request({
-                url: 'https://open.feishu.cn/open-apis/mina/v2/tokenLoginValidate',
-                method: "POST",
-                data: {
-                    "code": self.data.code
-                },
-                header: {
-                    'content-type': 'application/json',
-                    'Authorization': self.data.app_access_token
-                },
-                success (res) {
-                    console.log(`code2session 调用成功 ${res}`);
-                },
-                fail (res) {
-                    console.log(`code2session 调用失败`);
-                }
-            });
-            console.log(`login 调用成功 ${self.data.code} `);
-        },
-        fail (res) {
-            console.log(`login 调用失败`);
-        }
-    });
-  }
+	bindChange: function (e) {
+		const val = e.detail.value
+		this.setData({
+			year: this.data.years[val[0]],
+			month: this.data.months[val[1]],
+			day: this.data.days[val[2]]
+		})
+	}
 })

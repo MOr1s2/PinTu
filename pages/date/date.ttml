@@ -1,3 +1,128 @@
-<view>
-    <image class="image" src="/image/LvTu.png" bindtap="test"></image>
+<view class="background">
+  <picker-view indicator-style="height: 48px;margin-top:480px;" value="{{value}}" bindchange="bindChange">
+    <picker-view-column style="text-align: center;">
+      <view tt:for="{{years}}" style="line-height: 50px; text-align: center;">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column style="text-align: center;">
+      <view tt:for="{{months}}" style="line-height: 50px; text-align: center;">{{item}}月</view>
+    </picker-view-column>
+    <picker-view-column style="text-align: center;">
+      <view tt:for="{{days}}" style="line-height: 50px; text-align: center;">{{item}}日</view>
+    </picker-view-column>
+  </picker-view>
+
+  <view class="line"></view>
+
+  <scroll-view scroll-y="true" style="height: 400px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+    </view>
+  </scroll-view>
 </view>

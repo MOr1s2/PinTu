@@ -1,19 +1,221 @@
-<view class="page-section-spacing">
-  <scroll-view scroll-y="true" style="height: 800px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
-    <view id="demo1" class="scroll-view-item demo-text-1"></view>
-    <view id="demo2" class="scroll-view-item demo-text-2"></view>
-    <view id="demo3" class="scroll-view-item demo-text-3"></view>
-    <view id="demo4" class="scroll-view-item demo-text-1"></view>
-    <view id="demo5" class="scroll-view-item demo-text-2"></view>
-    <view id="demo6" class="scroll-view-item demo-text-3"></view>
-    <view id="demo7" class="scroll-view-item demo-text-1"></view>
-    <view id="demo8" class="scroll-view-item demo-text-2"></view>
-    <view id="demo9" class="scroll-view-item demo-text-3"></view>
-    <view id="demo10" class="scroll-view-item demo-text-1"></view>
-    <view id="demo11" class="scroll-view-item demo-text-2"></view>
-    <view id="demo12" class="scroll-view-item demo-text-3"></view>
-    <view id="demo13" class="scroll-view-item demo-text-1"></view>
-    <view id="demo14" class="scroll-view-item demo-text-2"></view>
-    <view id="demo15" class="scroll-view-item demo-text-3"></view>
+<view class="background">
+  <view class="row" style="height:36px">
+    <image src='/icon/message.png' style="width:18px;height:18px;margin-top:3px;"></image>
+    <text style="font-size:16px;color:#000000" space="ensp"> 共有10条结果：</text>
+  </view>
+  
+  <view class="line"></view>
+
+  <scroll-view scroll-y="true" style="height: 400px;" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
+    <view id="demo1" class="block">
+      <view class="row">
+        <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+      </view>
+      <view class="part"></view>
+      <view class="row">
+        <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+        <text style="font-size:0.8rem;color:#000000" space="ensp"> 3/4</text>
+      </view>
+    </view>
   </scroll-view>
 </view>
