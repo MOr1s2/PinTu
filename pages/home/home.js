@@ -22,7 +22,10 @@ var ms = [
 
 Page({
     data: {
-        date:"",
+        code:'',
+        app_access_token:'',
+        open_id:'',
+        date:'',
         nameLeft: '',
         addressLeft: '',
         latitudeLeft: '',
@@ -51,8 +54,6 @@ Page({
             myday =  `0${myDate.getDate()}`
         }
         var mydate = `${myDate.getFullYear()}-${mymonth}-${myday}`;
-        console.log(myhour)
-        console.log(Math.floor(myminute/15))
         self.setData({
             date:mydate,
             nameLeft:'起点',
@@ -103,26 +104,66 @@ Page({
                     url: '/pages/account/account'
                 });
             }else{
+                tt.request({
+                            url: 'https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal/',
+                            method: "POST",
+                            data: {
+                                "app_id":"cli_9fad765d3175100d",
+                                "app_secret":"W4BkcbAdYW6azsnoTUUL1ersWQvDCXLe"
+                            },
+                            header: {
+                                'content-type': 'application/json'
+                            },
+                            success (res) {
+                                self.setData({
+                                    app_access_token: res.data.app_access_token
+                                })
+                                console.log(`token 调用成功 ${res.data.app_access_token}`)
+                            },
+                            fail (res) {
+                                console.log(`token 调用失败`);
+                            }
+                        });
                 tt.login({
                     success (res) {
-                        console.log(`login 调用成功 ${res.code} `);
-                        var app = getApp();
-                        app.globalData.account.id = res.code;
+                        self.setData({
+                            code: res.code
+                        })
+                        tt.request({
+                            url: 'https://open.feishu.cn/open-apis/mina/v2/tokenLoginValidate',
+                            method: "POST",
+                            data: {
+                                "app_access_token":self.data.app_access_token,
+                                "code": self.data.code
+                            },
+                            header: {
+                                'content-type': 'application/json',
+                                'Authorization': self.data.app_access_token
+                            },
+                            success (res) {
+                                self.setData({
+                                    open_id:res.date.open_id
+                                })
+                                console.log(`code2session 调用成功 ${res.data.code}`);
+                            },
+                            fail (res) {
+                                console.log(`code2session 调用失败`);
+                            }
+                        });
+                        console.log(`login 调用成功 ${self.data.code} `);               
                     },
                     fail (res) {
                         console.log(`login 调用失败`);
                     }
                 });
+
                 tt.request({
-                    //url: `http://192.168.1.109:8080/${app.globalData.account.id}`,
-                    url: `http://192.168.1.109:8080/user/1`,
+                    //url: `http://localhost:8080//user/8`,
+                    url: `http://192.168.1.103:8080/user/${opne_id}`,
                     method:'get',
                     success(res) {
-                        if(!res){
-                            console.log(`get调用结果为${res}`); 
-                        }else{
-                            console.log(`get调用成功：${res.data.id}`);
-                            var app = getApp();
+                        if(res.data.id){
+                            console.log(`get调用成功，id为：${res.data.opne_id}`);
                             app.globalData.account = res.data;
                             try {
                                 tt.setStorageSync('account', app.globalData.account);
@@ -132,52 +173,49 @@ Page({
                             tt.navigateTo({
                             url: '/pages/account/account'
                             });    
+                        }else{
+                            console.log(`get调用结果为空`);
+                            tt.getUserInfo({
+                                success (res) {
+                                    console.log(`getUserInfo 调用成功 ${res.userInfo}`);
+                                    tt.request({
+                                        //url: `http://localhost:8080/user?avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
+                                        url: `http://192.168.1.103:8080/user?open_id=${self.data.opne_id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
+                                        method:'POST',
+                                        success(res) {
+                                            if(res.data.open_id){
+                                                app.globalData.account = res.data;
+                                                try {
+                                                    tt.setStorageSync('account', app.globalData.account);
+                                                } catch (error) {
+                                                    console.log(`setStorageSync 调用失败`);
+                                                }
+                                                tt.navigateTo({
+                                                    url: '/pages/account/account'
+                                                });  
+                                                console.log(`post调用成功，id为：${res.data.id}`);  
+                                            }else{
+                                                console.log(`post调用结果为空，id为：${res.data}`);   
+                                            }
+                                        },
+                                        fali(res){
+                                            console.log(`post调用失败：${res.data}`); 
+                                        }
+                                    });
+                                },
+                                fail (res) {
+                                    console.log(`getUserInfo 调用失败`);
+                                }
+                            })                             
                         }    
                     },
-                    fail(res) {
-                        console.log(`get 调用失败`);
-                        tt.getUserInfo({
-                            success (res) {
-                                console.log(`getUserInfo 调用成功 ${res.userInfo}`);
-                                tt.request({
-                                    //url: `http://localhost:8080/user?id=${}&avatar=${}&rank=${}&nickName=${}&name=${}&gender=${}&phone=${}&university=${}`,
-                                    url: `http://192.168.1.109:8080/user?id=${app.globalData.account.id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${2}`,
-                                    method:'post',
-                                    success(res) {
-                                        if(!res){
-                                            console.log(`post调用结果为${res}`)
-                                        }else{
-                                            console.log(`post调用成功：${res}`);
-                                            var app = getApp();
-                                            app.globalData.account = res;
-                                            try {
-                                                tt.setStorageSync('account', app.globalData.account);
-                                            } catch (error) {
-                                                console.log(`setStorageSync 调用失败`);
-                                            }
-                                            tt.navigateTo({
-                                            url: '/pages/account/account'
-                                            });    
-                                        }
-                                    },
-                                    fali(res){
-                                        console.log(`save调用失败：${res}`); 
-                                    }
-                                });
-                            },
-                            fail (res) {
-                                console.log(`getUserInfo 调用失败`);
-                            }
-                        })
-                    },
+                    fail(res){
+                        console.log(`get调用失败`);
+                    }
                 })
-                /*
-                
-                */
             }
         } catch (error) {
             console.log(`getStorageSync 调用失败`);
-            
         }
     },
     
@@ -268,8 +306,8 @@ Page({
 
     search: function(e){
         tt.navigateTo({
-            url: "/pages/result/result",
-            //url: "/pages/Test/Test",
+            //url: "/pages/result/result",
+            url: "/pages/Test/Test",
             success (res) {
                 console.log(`${res}`);
             },

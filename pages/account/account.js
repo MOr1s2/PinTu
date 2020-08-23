@@ -3,8 +3,8 @@ Page({
   data: {
     id:"",
     avatar:"",
-    rank:"",
-    nickName:"",
+    credit:"",
+    nickname:"",
     name:"",
     gender:"",
     phone:"",
@@ -25,10 +25,10 @@ Page({
       avatar:app.globalData.account.avatar,
       name:app.globalData.account.name,
       gender:mygender,
-      nickName:app.globalData.account.nickName,
+      nickName:app.globalData.account.nickname,
       phone:app.globalData.account.phone,
       university:app.globalData.account.university,
-      rank:app.globalData.account.rank
+      rank:app.globalData.account.credit
     })
   }
   

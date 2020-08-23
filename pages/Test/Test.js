@@ -1,56 +1,63 @@
-var startHour = ['00','01','02','03','04','05','06','07','08','09','10','11','12','13','14','15','16','17','18','19','20','21','22','23'];
-var startMinute = ['00','15','30','45'];
-var startTime = [];
-var endTime = [];
-for (var i = 0; i < 24; i++) {
-    for(var j = 0; j < 4; j++ ){
-        startTime.push(startHour[i]+':'+startMinute[j])
-    } 
-}
-startTime.push('24:00')
-
-for (i = 1;i <= 96; i++){
-    endTime.push(startTime.slice(i,i+4))
-}
-
-var ms = [
-    startTime //0
-    ,
-    endTime //1
-];
-
 Page({
-    data: {
-        multiArray: [
-            startTime,
-            startTime
-        ],
-        multiIndex: [0, 0, 0],
-    },
+  data: {
+      code:"",
+      app_access_token:"",
+  },
 
-    bindMultiPickerChange: function (e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
-        this.setData({
-            multiIndex: e.detail.value
-        })
-    },
-    bindMultiPickerColumnChange: function (e) {
-        // return;
-        console.log('修改的列为', e.detail.column, '，值为', e.detail.value);
-        var data = {
-            multiArray: this.data.multiArray,
-            multiIndex: this.data.multiIndex
-        };
-        switch (e.detail.column) {
-            case 0:
-                data.multiIndex[0] = e.detail.value;
-                data.multiIndex[1] = 0;
-                data.multiArray[1] = ms[1][data.multiIndex[0]];
-                break;
-            case 1:
-                data.multiIndex[1] = e.detail.value;
-                break;
+  onLoad: function (options) {
+    self = this
+  },
+
+  test: function(e){
+    tt.request({
+                url: 'https://open.feishu.cn/open-apis/auth/v3/app_access_token/internal/',
+                method: "POST",
+                data: {
+                    "app_id":"cli_9fad765d3175100d",
+                    "app_secret":"W4BkcbAdYW6azsnoTUUL1ersWQvDCXLe"
+                },
+                header: {
+                    'content-type': 'application/json'
+                },
+                success (res) {
+                    self.setData({
+                        app_access_token: res.data.app_access_token
+                    })
+                    console.log(`token 调用成功 ${res.data.app_access_token}`)
+                },
+                fail (res) {
+                    console.log(`token 调用失败`);
+                }
+            });
+
+     tt.login({
+        success (res) {
+            self.setData({
+                code: res.code
+            })
+            tt.request({
+                url: 'https://open.feishu.cn/open-apis/mina/v2/tokenLoginValidate',
+                method: "POST",
+                data: {
+                    "app_access_token":self.data.app_access_token,
+                    "code": self.data.code
+                },
+                header: {
+                    'content-type': 'application/json',
+                    'Authorization': self.data.app_access_token
+                },
+                success (res) {
+                    console.log(`code2session 调用成功 ${res.data.code}`);
+                },
+                fail (res) {
+                    console.log(`code2session 调用失败`);
+                }
+            });
+            console.log(`login 调用成功 ${self.data.code} `);               
+        },
+        fail (res) {
+            console.log(`login 调用失败`);
         }
-        this.setData(data);
-    }
+    });
+  }
 })
