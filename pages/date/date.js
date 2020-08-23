@@ -21,7 +21,6 @@ Page({
 
     onLoad: function (options) {
         self = this;
-		console.log(self.data.value)
     },
 
 	bindChange: function (e) {

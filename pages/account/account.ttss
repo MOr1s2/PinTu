@@ -1,26 +1,46 @@
 /* pages/account.ttss */
-.row{
-    display: flex;
-}
-
 .avatar{
     height: 100px;
     width: 100px;
-    border: 1px solid gainsboro;
+    border: 1px solid white;
     border-radius: 50px;
-    margin-top: 20px;
-    margin-left: 135px;
-    margin-bottom: 40px;
+    margin-top: 18px;
+    margin-left: 120px;
+    box-shadow: 0px 2px 6px 0px #dddddd;
 }
 
-.information{
-    margin: 18px 36px;
-    font-size: 24px;
+.background{
+    margin: 12px 18px 0px 18px;
+    background-color: #fafafa;
+    height: 510px;
+    border: 1px solid #f5f6f7;
+    border-radius: 27px;
 }
 
 .line{
-    height: 1px;
-    background: #aaa;
-    margin-left: 36px;
-    margin-right: 36px;
+    margin-top: 12px;
+    width: 96%;
+    margin-left: 2%;
+    height: 2px;
+    background: #eeeeee;
+}
+
+.block{
+    margin: 18px 4px 0 4px;
+    background-color: #ffffff;
+    height: 36px;
+    border: 1px solid #f2f2f2;
+    font-size: 18px;
+    text-align: left;
+    border-radius: 12px;
+    box-shadow: 0px 2px 6px 0px #dddddd;
+
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left; 
+    margin:4px 5%;
 }

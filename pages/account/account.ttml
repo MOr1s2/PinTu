@@ -1,10 +1,35 @@
-<!-- pages/account.ttml -->
-<image src="{{avatar}}" class="avatar"/>
-<view class="information"><text>信用等级：</text></view>
-<view class="line"></view>
-<view class="information"><text>昵称：</text></view>
-<view class="information"><text>姓名：{{name}}</text></view>
-<view class="information"><text>性别：{{gender}}</text></view>
-<view class="information"><text>手机号：</text></view>
-<view class="line"></view>
-<view class="information"><text>认证信息：</text></view>
+<view class="background">
+    <image src="{{avatar}}" class="avatar"/>
+    <view class="block">
+        <view class="row">
+            <text>信用等级：</text>
+        </view>
+    </view>
+    <view class="block" style="height: 180px;">
+        <view class="row" style="margin-top:8px;">
+            <text>昵称：</text>
+        </view>
+        <view class="line"></view>
+        <view class="row" style="margin-top:8px;">
+            <text>姓名：{{name}}</text>
+        </view>
+        <view class="line"></view>
+        <view class="row" style="margin-top:8px;">
+            <text>性别：{{gender}}</text>
+        </view>
+        <view class="line"></view>
+        <view class="row" style="margin-top:8px;">
+            <text>联系方式：</text>
+        </view>
+    </view>
+    <view class="block">
+        <view class="row">
+            <text>认证信息：</text>
+        </view>
+    </view>
+    <view class="block" style="width:40px;height:40px;margin-left:148px;">
+        <view class="row" style="margin-top:8px;justify-content: center;">
+            <image src="/icon/edit.png" style="height:25px;width:25px;"/>
+        </view>
+    </view>
+</view>

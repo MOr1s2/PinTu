@@ -1,5 +1,6 @@
 .account{
-    margin-left: 85%;
+    margin-top: 5%;
+    margin-left: 80%;
     width:36px;
     height:36px;
 }
@@ -71,8 +72,9 @@
 }
 
 .date{
-    margin-left: 18px;
-    width: 144px;
+    font-size: 16px;
+    margin-left: 12px;
+    width: 114px;
     border: 0px solid #dddddd;
     background-color: #fdfdfd;
     border-radius: 0px;
@@ -83,8 +85,9 @@
 }
 
 .time{
-    margin-left: 48px;
-    width: 66px;
+    font-size: 16px;
+    margin-left: 32px;
+    width: 132px;
     border: 0px solid #dddddd;
     background-color: #fdfdfd;
     border-radius: 0px;

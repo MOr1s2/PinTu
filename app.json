@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/account/account",
     "pages/result/result",
-    "pages/date/date"
+    "pages/date/date",
+    "pages/Test/Test"
     
   ],
 

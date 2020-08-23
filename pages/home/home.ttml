@@ -18,13 +18,16 @@
             <button class="date"> {{date}} </button>
         </picker>
 
-        <picker mode="time" value="{{time}}" start="{{timeStart}}" end="{{timeEnd}}"
-        bindchange="bindTimeChange">
-            <button class="time"> {{time}} </button>
+        <picker mode="multiSelector"
+            bindchange="bindMultiPickerChange"
+            bindcolumnchange="bindMultiPickerColumnChange"
+            value="{{multiIndex}}" range="{{multiArray}}">
+            <button class="time"> {{multiArray[0][multiIndex[0]]}}  -  {{multiArray[1][multiIndex[1]]}} </button>
         </picker>
+        
     </view>
     <view class="row">
-        <button  class="switch" type="primary" bindtap="switchName"> ↺ </button>
+        <button  class="switch" type="primary" bindtap="switchName"> 交换 </button>
         <button  class="search" type="primary" bindtap="search"> 搜索 </button>
     </view>
 </view>
