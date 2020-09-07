@@ -1,3 +1,24 @@
-<view>
-  <image src="/image/Timo.jpeg"/ bindtap="test">
-</view>
+        <view id="demo1" class="block">
+            <view class="row">
+                <image src='/icon/start.png' style="width:16px;height:16px;"></image>
+                <text style="font-size:0.8rem;color:#000000" space="ensp"> 电子科技大学</text>
+            </view>
+            <view class="part"></view>
+            <view class="row">
+                <image src='/icon/to.png' style="width:12px;height:12px;margin-left:1%;"></image>
+                <text style="font-size:0.8rem;color:#000000" space="ensp"> 四川大学</text>
+            </view>
+            <view class="part"></view>
+            <view class="row">
+                <image src='/icon/date.png' style="width:12px;height:12px;margin-left:1%;"></image>
+                <text style="font-size:0.8rem;color:#000000" space="ensp"> 2020年8月22日</text>
+            </view>
+            <view class="part"></view>
+            <view class="row">
+                <image src='/icon/member.png' style="width:14px;height:14px;margin-left:2px"></image>
+                <image src="/icon/unknown.png" class="avatar"></image>
+                <image src="/icon/unknown.png" class="avatar"></image>
+                <image src="/icon/unknown.png" class="avatar"></image>
+                <image src="/icon/unknown.png" class="avatar"></image>
+            </view>
+        </view>

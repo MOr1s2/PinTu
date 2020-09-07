@@ -1,5 +1,6 @@
 <view class="background">
     <image src="{{avatar}}" class="avatar"/>
+    <form bindsubmit='submit'>
     <view class="block">
         <view class="row">
             <text>信用等级：</text>
@@ -8,6 +9,7 @@
     <view class="block" style="height: 180px;">
         <view class="row" style="margin-top:8px;">
             <text>昵称：</text>
+            <input focus="{{focus}}" name="nickname" style="margin-top:2px" value="{{nickname}}" disabled="{{disabled}}" type="text"/>
         </view>
         <view class="line"></view>
         <view class="row" style="margin-top:8px;">
@@ -15,11 +17,13 @@
         </view>
         <view class="line"></view>
         <view class="row" style="margin-top:8px;">
-            <text>性别：{{gender}}</text>
+            <text>性别：</text>
+            <input focus="{{focus}}" name="gender" style="margin-top:2px" value="{{gender}}" disabled="{{disabled}}" type="text"/>
         </view>
         <view class="line"></view>
         <view class="row" style="margin-top:8px;">
-            <text>联系方式：</text>
+            <text>电话：</text>
+            <input focus="{{focus}}" name="phone" style="margin-top:2px" value="{{phone}}" disabled="{{disabled}}" type="number"/>
         </view>
     </view>
     <view class="block">
@@ -28,8 +32,11 @@
         </view>
     </view>
     <view class="block" style="width:40px;height:40px;margin-left:148px;">
-        <view class="row" style="margin-top:8px;justify-content: center;">
-            <image src="/icon/edit.png" style="height:25px;width:25px;"/>
+        <view class="row" style="margin-top:4px;justify-content: center;">
+            <button style="visibility: hidden" formType="submit"  bindtap="edit">
+                <image src="{{icon}}" style="height:25px;width:25px;visibility: visible"/>
+            </button>
         </view>
     </view>
+    </form>
 </view>

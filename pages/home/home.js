@@ -158,12 +158,13 @@ Page({
                 });
 
                 tt.request({
-                    //url: `http://localhost:8080//user/8`,
-                    url: `http://192.168.1.103:8080/user/${opne_id}`,
+                    //url: `http://localhost:8080/user/8`,
+                    url: `http://192.168.1.105:8080/user/8`,
+                    //url: `http://192.168.1.105:8080/user/${open_id}`,
                     method:'get',
                     success(res) {
                         if(res.data.id){
-                            console.log(`get调用成功，id为：${res.data.opne_id}`);
+                            console.log(`get调用成功，id为：${res.data.open_id}`);
                             app.globalData.account = res.data;
                             try {
                                 tt.setStorageSync('account', app.globalData.account);
@@ -180,7 +181,7 @@ Page({
                                     console.log(`getUserInfo 调用成功 ${res.userInfo}`);
                                     tt.request({
                                         //url: `http://localhost:8080/user?avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
-                                        url: `http://192.168.1.103:8080/user?open_id=${self.data.opne_id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
+                                        url: `http://192.168.1.105:8080/user?open_id=${self.data.open_id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
                                         method:'POST',
                                         success(res) {
                                             if(res.data.open_id){
@@ -306,8 +307,8 @@ Page({
 
     search: function(e){
         tt.navigateTo({
-            //url: "/pages/result/result",
-            url: "/pages/Test/Test",
+            url: "/pages/result/result",
+            //url: "/pages/Test/Test",
             success (res) {
                 console.log(`${res}`);
             },

@@ -22,7 +22,7 @@
 .block{
     margin: 8px 12px 0 12px;
     background-color: #ffffff;
-    height: 60px;
+    height: 90px;
     border: 1px solid #f2f2f2;
     font-size: 16px;
     text-align: left;
@@ -36,4 +36,12 @@
     align-items: center;
     justify-content: left; 
     margin:4px 5%;
+}
+
+.avatar{
+    height: 20px;
+    width: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    margin-left: 4px;
 }
