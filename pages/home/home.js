@@ -20,12 +20,26 @@ var ms = [
     endTime //1
 ];
 
+var myDate = new Date();
+var mymonth = `${myDate.getMonth()}`;
+var myday =  `${myDate.getDate()}`;
+var myhour = myDate.getHours();
+var myminute = myDate.getMinutes();
+if(myDate.getMonth()<10){
+    mymonth = `0${myDate.getMonth()+1}`
+}
+if(myDate.getDate()<10){
+    myday =  `0${myDate.getDate()}`
+}
+var mydate = `${myDate.getFullYear()}-${mymonth}-${myday}`;
+
 Page({
     data: {
         code:'',
         app_access_token:'',
         open_id:'',
         date:'',
+        time:'',
         nameLeft: '',
         addressLeft: '',
         latitudeLeft: '',
@@ -38,28 +52,20 @@ Page({
             startTime,
             startTime
         ],
-        multiIndex: [0, 0],
+        multiIndex: [0, 0]
     },
     onLoad: function (options) {
         self = this;
-        var myDate = new Date();
-        var mymonth = `${myDate.getMonth()}`;
-        var myday =  `${myDate.getDate()}`;
-        var myhour = myDate.getHours();
-        var myminute = myDate.getMinutes();
-        if(myDate.getMonth()<10){
-            mymonth = `0${myDate.getMonth()+1}`
-        }
-        if(myDate.getDate()<10){
-            myday =  `0${myDate.getDate()}`
-        }
-        var mydate = `${myDate.getFullYear()}-${mymonth}-${myday}`;
         self.setData({
-            date:mydate,
-            nameLeft:'起点',
-            nameRight:'终点',
-            multiIndex: [myhour*4+Math.ceil(myminute/15), myhour*4+Math.ceil(myminute/15)],
-            })
+        date:mydate,
+        nameLeft:'起点',
+        nameRight:'终点',
+        multiIndex: [myhour*4+Math.ceil(myminute/15), 0],
+        multiArray: [
+            startTime,
+            startTime.slice(myhour*4+Math.ceil(myminute/15),myhour*4+Math.ceil(myminute/15)+4)
+        ]
+})
     },
 
     bindDateChange: function (e) {
@@ -70,10 +76,12 @@ Page({
     },
 
     bindMultiPickerChange: function (e) {
-        console.log('picker发送选择改变，携带值为', e.detail.value)
+        console.log('Multipicker发送选择改变，携带值为', e.detail.value)
         this.setData({
+            time: self.data.multiArray[0].slice(e.detail.value[0],e.detail.value[0]+e.detail.value[1]+1),
             multiIndex: e.detail.value
         })
+        console.log(self.data.time)
     },
     bindMultiPickerColumnChange: function (e) {
         // return;
