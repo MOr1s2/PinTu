@@ -1,4 +1,5 @@
 // pages/account.js
+var app = getApp();
 Page({
   data: {
     id:"",
@@ -14,7 +15,6 @@ Page({
   },
   onLoad: function (options) {
     self = this;
-    var app = getApp();
     var mygender;
     if(app.globalData.account.gender==1){
       mygender = "男"
@@ -50,14 +50,26 @@ Page({
   },
 
   submit:function(e){
-    let first,second;
-    self.setData({
-        nickname: e.detail.value.nickname,
-        gender: e.detail.value.gender,
-        phone: e.detail.value.phone,
-    })
-    console.log(self.data.nickname)
-    console.log(self.data.gender)
-    console.log(self.data.phone)
+    if(self.data.disabled){
+      let first,second;
+      self.setData({
+          nickname: e.detail.value.nickname,
+          gender: 2,
+          phone: e.detail.value.phone,
+      })
+      tt.request({
+        //url: `http://192.168.1.104:8080/user?openid=${app.globalData.account.openid}&phone=${self.data.phone}`,
+        url: `http://192.168.1.104:8080/user?openid=${app.globalData.account.openid}&nickname=${self.data.nickname}&gender=${self.data.gender}&phone=${self.data.phone}`,
+        //url: `http://192.168.1.104:8080/user?openid=ou_cd3fdc86c63a91b2bf9ee34cd&nickname=cngz&gender=2&phone=11111111111`,
+        method:'PUT',
+        success(res) {
+          console.log(res.data)
+        }
+      })
+      console.log(app.globalData.account.openid) 
+      console.log(self.data.nickname)
+      console.log(self.data.gender)
+      console.log(self.data.phone)
+    }
   }
 })
