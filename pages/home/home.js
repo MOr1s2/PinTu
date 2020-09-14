@@ -57,15 +57,15 @@ Page({
     onLoad: function (options) {
         self = this;
         self.setData({
-        date:mydate,
-        nameLeft:'起点',
-        nameRight:'终点',
-        multiIndex: [myhour*4+Math.ceil(myminute/15), 0],
-        multiArray: [
-            startTime,
-            startTime.slice(myhour*4+Math.ceil(myminute/15),myhour*4+Math.ceil(myminute/15)+4)
-        ]
-})
+            date:mydate,
+            nameLeft:'起点',
+            nameRight:'终点',
+            multiIndex: [myhour*4+Math.ceil(myminute/15), 0],
+            multiArray: [
+                startTime,
+                startTime.slice(myhour*4+Math.ceil(myminute/15),myhour*4+Math.ceil(myminute/15)+4)
+            ]
+        })
     },
 
     bindDateChange: function (e) {
