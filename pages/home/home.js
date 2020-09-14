@@ -37,7 +37,7 @@ Page({
     data: {
         code:'',
         app_access_token:'',
-        open_id:'',
+        openid:'',
         date:'',
         time:'',
         nameLeft: '',
@@ -150,9 +150,9 @@ Page({
                             },
                             success (res) {
                                 self.setData({
-                                    open_id:res.date.open_id
+                                    openid:res.data.data.open_id
                                 })
-                                console.log(`code2session 调用成功 ${res.data.code}`);
+                                console.log(`code2session 调用成功:${self.data.openid}`);
                             },
                             fail (res) {
                                 console.log(`code2session 调用失败`);
@@ -164,15 +164,15 @@ Page({
                         console.log(`login 调用失败`);
                     }
                 });
-
                 tt.request({
                     //url: `http://localhost:8080/user/8`,
-                    url: `http://192.168.1.105:8080/user/8`,
-                    //url: `http://192.168.1.105:8080/user/${open_id}`,
-                    method:'get',
+                    //url: `http://192.168.1.101:8080/user/ou_cd3fdc86c63a91b2bf9ee34cd74fc943`,
+                    url: `http://192.168.1.101:8080/user/${self.data.openid}`,
+                    method:'GET',
                     success(res) {
-                        if(res.data.id){
-                            console.log(`get调用成功，id为：${res.data.open_id}`);
+                        console.log('open_id为：'+self.data.openid)
+                        if(res.data.openid){
+                            console.log(`get调用成功，openid为：${res.data.openid}`);
                             app.globalData.account = res.data;
                             try {
                                 tt.setStorageSync('account', app.globalData.account);
@@ -180,32 +180,29 @@ Page({
                                 console.log(`setStorageSync 调用失败`);
                             }
                             tt.navigateTo({
-                            url: '/pages/account/account'
-                            });    
-                        }else{
-                            console.log(`get调用结果为空`);
+                                url: '/pages/account/account'
+                            });
+                        /*    
+                        } else {
+                            console.log(`get调用失败`);
                             tt.getUserInfo({
                                 success (res) {
                                     console.log(`getUserInfo 调用成功 ${res.userInfo}`);
                                     tt.request({
                                         //url: `http://localhost:8080/user?avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
-                                        url: `http://192.168.1.105:8080/user?open_id=${self.data.open_id}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
+                                        url: `http://192.168.1.101:8080/user?openid=${self.data.openid}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
                                         method:'POST',
                                         success(res) {
-                                            if(res.data.open_id){
-                                                app.globalData.account = res.data;
-                                                try {
-                                                    tt.setStorageSync('account', app.globalData.account);
-                                                } catch (error) {
-                                                    console.log(`setStorageSync 调用失败`);
-                                                }
-                                                tt.navigateTo({
-                                                    url: '/pages/account/account'
-                                                });  
-                                                console.log(`post调用成功，id为：${res.data.id}`);  
-                                            }else{
-                                                console.log(`post调用结果为空，id为：${res.data}`);   
+                                            app.globalData.account = res.data;
+                                            try {
+                                                tt.setStorageSync('account', app.globalData.account);
+                                            } catch (error) {
+                                                console.log(`setStorageSync 调用失败`);
                                             }
+                                            tt.navigateTo({
+                                                url: '/pages/account/account'
+                                            });  
+                                            console.log(`post调用成功，openid为：${res.data.openid}`);  
                                         },
                                         fali(res){
                                             console.log(`post调用失败：${res.data}`); 
@@ -215,13 +212,15 @@ Page({
                                 fail (res) {
                                     console.log(`getUserInfo 调用失败`);
                                 }
-                            })                             
-                        }    
-                    },
+                            })                            
+                        } 
+                        */
+                        }
+                    },     
                     fail(res){
                         console.log(`get调用失败`);
-                    }
-                })
+                    }    
+                });
             }
         } catch (error) {
             console.log(`getStorageSync 调用失败`);
