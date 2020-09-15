@@ -167,7 +167,8 @@ Page({
                 tt.request({
                     //url: `http://localhost:8080/user/8`,
                     //url: `http://192.168.1.101:8080/user/ou_cd3fdc86c63a91b2bf9ee34cd74fc943`,
-                    url: `http://192.168.1.101:8080/user/${self.data.openid}`,
+                    //url: `http://192.168.1.101:8080/user/${self.data.openid}`,
+                    url: `http://211.83.105.202:8080/user/${self.data.openid}`,
                     method:'GET',
                     success(res) {
                         console.log('open_id为：'+self.data.openid)
@@ -182,7 +183,7 @@ Page({
                             tt.navigateTo({
                                 url: '/pages/account/account'
                             });
-                        /*    
+                        
                         } else {
                             console.log(`get调用失败`);
                             tt.getUserInfo({
@@ -190,7 +191,7 @@ Page({
                                     console.log(`getUserInfo 调用成功 ${res.userInfo}`);
                                     tt.request({
                                         //url: `http://localhost:8080/user?avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
-                                        url: `http://192.168.1.101:8080/user?openid=${self.data.openid}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
+                                        url: `http://211.83.105.202:8080/user?openid=${self.data.openid}&avatar=${res.userInfo.avatarUrl}&name=${res.userInfo.nickName}&gender=${0}`,
                                         method:'POST',
                                         success(res) {
                                             app.globalData.account = res.data;
@@ -214,8 +215,7 @@ Page({
                                 }
                             })                            
                         } 
-                        */
-                        }
+                        
                     },     
                     fail(res){
                         console.log(`get调用失败`);
